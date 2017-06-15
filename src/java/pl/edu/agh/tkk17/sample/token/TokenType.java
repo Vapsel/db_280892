@@ -7,7 +7,9 @@ public enum TokenType
     ADD("ADD"),
     MUL("MUL"),
     SUB("SUB"),
-    DIV("DIV");
+    DIV("DIV"),
+    LBR("LBR"), // Left bracket
+    RBR("RBR"); // Right bracket
 
     private final String name;
 

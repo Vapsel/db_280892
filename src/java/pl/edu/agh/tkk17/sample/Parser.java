@@ -50,7 +50,7 @@ public class Parser
 
     private Node parseTerm()
     {
-        Node left = this.parseNumber();
+        Node left = this.parseFactor();
         if (this.check(TokenType.MUL)) {
             this.forward();
             Node right = this.parseTerm();
@@ -62,6 +62,19 @@ public class Parser
         } else {
             return left;
         }
+    }
+
+    private Node parseFactor() {
+        Node left;
+        if (this.check(TokenType.LBR)) {
+            this.forward();
+            left = this.parseExpression();
+            this.expect(TokenType.RBR);
+            this.forward();
+        } else {
+            left = this.parseNumber();
+        }
+        return left;
     }
 
     private Node parseExpression()
