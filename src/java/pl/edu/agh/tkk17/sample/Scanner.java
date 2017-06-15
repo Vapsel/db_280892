@@ -46,6 +46,10 @@ public class Scanner implements Iterator<Token>, Iterable<Token>
             throw new NoSuchElementException("Scanner input ended.");
         }
 
+        while (this.character == ' '){
+            readChar();
+        }
+
         char character = this.character;
         Token token;
 
