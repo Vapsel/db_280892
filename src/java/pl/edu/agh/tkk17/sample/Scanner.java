@@ -55,10 +55,14 @@ public class Scanner implements Iterator<Token>, Iterable<Token>
         } else if (character == '*') {
             token = this.makeToken(TokenType.MUL);
             this.readChar();
-        } else if (character >= '0' && character <= '9') {
-            String value = String.valueOf(character);
-            token = this.makeToken(TokenType.NUM, value);
-            this.readChar();
+        } else if (isDigit(character)) {
+            StringBuilder builder = new StringBuilder();
+            do {
+                builder.append(this.character);
+                readChar();
+            } while (isDigit(this.character));
+            character = this.character;
+            token = this.makeToken(TokenType.NUM, builder.toString());
         } else if (character == '\n' || character == '\u0000') {
             token = this.makeToken(TokenType.END);
             this.readChar();
@@ -69,6 +73,10 @@ public class Scanner implements Iterator<Token>, Iterable<Token>
 
         return token;
 
+    }
+
+    private boolean isDigit(char character){
+        return character >= '0' && character <= '9';
     }
 
     public Iterator<Token> iterator()
