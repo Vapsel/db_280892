@@ -1,8 +1,7 @@
 package pl.edu.agh.tkk17.sample;
 
-import pl.edu.agh.tkk17.sample.nodes.NodeAdd;
-import pl.edu.agh.tkk17.sample.nodes.NodeMul;
-import pl.edu.agh.tkk17.sample.nodes.NodeNumber;
+import pl.edu.agh.tkk17.sample.exceptions.DivisionByZeroException;
+import pl.edu.agh.tkk17.sample.nodes.*;
 
 import java.util.Stack;
 
@@ -37,6 +36,29 @@ public class RpnEvaluatorVisitor implements NodeVisitor
         Float a = this.stack.pop();
         Float b = this.stack.pop();
         Float c = b * a;
+        this.stack.push(c);
+    }
+
+    @Override
+    public void visit(NodeSub node) {
+        node.getLeft().accept(this);
+        node.getRight().accept(this);
+        Float a = this.stack.pop();
+        Float b = this.stack.pop();
+        Float c = b - a;
+        this.stack.push(c);
+    }
+
+    @Override
+    public void visit(NodeDiv node) {
+        node.getLeft().accept(this);
+        node.getRight().accept(this);
+        Float a = this.stack.pop();
+        Float b = this.stack.pop();
+        if (a == 0){
+            throw new DivisionByZeroException();
+        }
+        Float c = b / a;
         this.stack.push(c);
     }
 

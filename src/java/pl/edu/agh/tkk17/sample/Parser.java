@@ -1,10 +1,7 @@
 package pl.edu.agh.tkk17.sample;
 
 import pl.edu.agh.tkk17.sample.exceptions.UnexpectedTokenException;
-import pl.edu.agh.tkk17.sample.nodes.Node;
-import pl.edu.agh.tkk17.sample.nodes.NodeAdd;
-import pl.edu.agh.tkk17.sample.nodes.NodeMul;
-import pl.edu.agh.tkk17.sample.nodes.NodeNumber;
+import pl.edu.agh.tkk17.sample.nodes.*;
 import pl.edu.agh.tkk17.sample.token.Token;
 import pl.edu.agh.tkk17.sample.token.TokenType;
 
@@ -58,6 +55,10 @@ public class Parser
             this.forward();
             Node right = this.parseTerm();
             return new NodeMul(left, right);
+        } else  if (this.check(TokenType.DIV)){
+            this.forward();
+            Node right = this.parseTerm();
+            return new NodeDiv(left, right);
         } else {
             return left;
         }
@@ -70,6 +71,10 @@ public class Parser
             this.forward();
             Node right = this.parseExpression();
             return new NodeAdd(left, right);
+        } else if (this.check(TokenType.SUB)) {
+            this.forward();
+            Node right = this.parseExpression();
+            return new NodeSub(left, right);
         } else {
             return left;
         }
