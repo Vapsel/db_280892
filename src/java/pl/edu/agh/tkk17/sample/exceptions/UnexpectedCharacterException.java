@@ -1,4 +1,4 @@
-package pl.edu.agh.tkk17.sample;
+package pl.edu.agh.tkk17.sample.exceptions;
 
 public class UnexpectedCharacterException extends OutputableException
 {

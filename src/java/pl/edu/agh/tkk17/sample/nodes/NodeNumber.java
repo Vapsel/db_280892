@@ -1,4 +1,6 @@
-package pl.edu.agh.tkk17.sample;
+package pl.edu.agh.tkk17.sample.nodes;
+
+import pl.edu.agh.tkk17.sample.NodeVisitor;
 
 public class NodeNumber extends Node
 {

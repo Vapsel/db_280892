@@ -1,5 +1,9 @@
 package pl.edu.agh.tkk17.sample;
 
+import pl.edu.agh.tkk17.sample.nodes.NodeAdd;
+import pl.edu.agh.tkk17.sample.nodes.NodeMul;
+import pl.edu.agh.tkk17.sample.nodes.NodeNumber;
+
 import java.io.PrintStream;
 
 public class RpnGeneratorVisitor implements NodeVisitor

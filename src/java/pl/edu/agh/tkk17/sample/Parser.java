@@ -1,6 +1,13 @@
 package pl.edu.agh.tkk17.sample;
 
-import java.util.Arrays;
+import pl.edu.agh.tkk17.sample.exceptions.UnexpectedTokenException;
+import pl.edu.agh.tkk17.sample.nodes.Node;
+import pl.edu.agh.tkk17.sample.nodes.NodeAdd;
+import pl.edu.agh.tkk17.sample.nodes.NodeMul;
+import pl.edu.agh.tkk17.sample.nodes.NodeNumber;
+import pl.edu.agh.tkk17.sample.token.Token;
+import pl.edu.agh.tkk17.sample.token.TokenType;
+
 import java.util.Iterator;
 
 public class Parser

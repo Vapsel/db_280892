@@ -1,5 +1,8 @@
 package pl.edu.agh.tkk17.sample;
 
+import pl.edu.agh.tkk17.sample.exceptions.OutputableException;
+import pl.edu.agh.tkk17.sample.nodes.Node;
+
 import java.lang.Math;
 
 public class Interpreter

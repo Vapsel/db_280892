@@ -1,4 +1,7 @@
-package pl.edu.agh.tkk17.sample;
+package pl.edu.agh.tkk17.sample.exceptions;
+
+import pl.edu.agh.tkk17.sample.token.Token;
+import pl.edu.agh.tkk17.sample.token.TokenType;
 
 import java.util.Collection;
 import java.util.LinkedList;

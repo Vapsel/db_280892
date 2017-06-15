@@ -1,5 +1,7 @@
 package pl.edu.agh.tkk17.sample;
 
+import pl.edu.agh.tkk17.sample.nodes.Node;
+
 import java.io.PrintStream;
 
 public class Generator

@@ -1,4 +1,4 @@
-package pl.edu.agh.tkk17.sample;
+package pl.edu.agh.tkk17.sample.exceptions;
 
 import java.io.IOException;
 

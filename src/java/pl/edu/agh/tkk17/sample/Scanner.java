@@ -1,5 +1,10 @@
 package pl.edu.agh.tkk17.sample;
 
+import pl.edu.agh.tkk17.sample.exceptions.UncheckedIOException;
+import pl.edu.agh.tkk17.sample.exceptions.UnexpectedCharacterException;
+import pl.edu.agh.tkk17.sample.token.Token;
+import pl.edu.agh.tkk17.sample.token.TokenType;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
